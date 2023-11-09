@@ -1,0 +1,48 @@
+#include <iostream>
+#include <fstream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    ifstream fin("nrcurat.in");
+    ofstream fout("nrcurat.out");
+    
+    int long long n,k,ogl=0,u,nr=0,urma,nrnou=0;
+    while(fin>>n)
+    {
+        k=n;
+    while(k!=0)
+       {
+        u=k%10;
+        ogl=ogl*10+u;
+        nr++;
+        k=k/10;
+        }
+        while(nr!=0)
+        {
+            nr--;
+            nrnou=nrnou*10+9;
+        }
+        urma=nrnou-n;
+        if(urma==ogl)
+        {
+            fout<<"1 ";
+            ogl=0;
+            urma=0;
+            nrnou=0;
+        }
+        else
+        {
+            fout<<"0 ";
+            ogl=0;
+            urma=0;
+            nrnou=0;
+        }
+       
+      
+    } 
+    
+   
+    return 0;
+}
